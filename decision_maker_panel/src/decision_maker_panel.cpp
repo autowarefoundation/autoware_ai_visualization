@@ -89,7 +89,7 @@ DecisionMakerPanel::DecisionMakerPanel(QWidget* parent) : rviz::Panel(parent)
   buttons_def["engage"] = new QPushButton("\nEngage\n");
   signalMapper->setMapping(buttons_def["engage"], QString("engage"));
   buttons_def["stop"] = new QPushButton("\nStop\n");
-  signalMapper->setMapping(buttons_def["stop"], QString("found_obstacle_in_stopped_area"));
+  signalMapper->setMapping(buttons_def["stop"], QString("wait"));
   buttons_def["go"] = new QPushButton("\nGo\n");
   signalMapper->setMapping(buttons_def["go"], QString("clear"));
   // execute
@@ -232,9 +232,9 @@ DecisionMakerPanel::DecisionMakerPanel(QWidget* parent) : rviz::Panel(parent)
   extra_layout_mission->addWidget(buttons_ext["mission_is_conflicting"], 2, 2);
   extra_layout_mission->addWidget(buttons_ext["return_to_driving"], 3, 0);
   extra_layout_mission->addWidget(buttons_ext["goto_wait_order"], 3, 1);
-  // state drive
+  // state behavior & motion
   QGridLayout* extra_layout_drive = new QGridLayout;
-  extra_layout_drive->addWidget(new QLabel("state Drive"), 0, 0);
+  extra_layout_drive->addWidget(new QLabel("state Behavior & Motion"), 0, 0);
   extra_layout_drive->addWidget(buttons_ext["operation_start"], 1, 0);
   extra_layout_drive->addWidget(buttons_ext["operation_end"], 1, 1);
   extra_layout_drive->addWidget(buttons_ext["on_lane_area"], 2, 0);
