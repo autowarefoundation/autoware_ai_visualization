@@ -1,29 +1,24 @@
 <?xml version="1.0"?>
-<package>
-    <name>autoware_rviz_plugins</name>
-    <version>1.11.0</version>
-    <description>The autoware_rviz_plugins package</description>
+<package format="2">
+  <name>autoware_rviz_plugins</name>
+  <version>1.12.0</version>
+  <description>The autoware_rviz_plugins package</description>
+  <maintainer email="yusuke.fujii@tier4.jp">Yusuke FUJII</maintainer>
+  <author>Yusuke FUJII</author>
+  <author>h_ohta</author>
+  <license>Apache 2</license>
 
-    <maintainer email="yusuke.fujii@tier4.jp">Yusuke FUJII</maintainer>
-    <author>Yusuke FUJII</author>
-    <author>h_ohta</author>
+  <buildtool_depend>autoware_build_flags</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
 
-    <license>Apache 2</license>
+  <depend>qtbase5-dev</depend>
+  <depend>rviz</depend>
+  <depend>std_msgs</depend>
 
-    <buildtool_depend>catkin</buildtool_depend>
-    <buildtool_depend>autoware_build_flags</buildtool_depend>
-    <build_depend>rviz</build_depend>
-    <build_depend>std_msgs</build_depend>
-    <build_depend>qtbase5-dev</build_depend>
+  <exec_depend>libqt5-core</exec_depend>
+  <exec_depend>libqt5-widgets</exec_depend>
 
-    <run_depend>rviz</run_depend>
-    <run_depend>std_msgs</run_depend>
-    <run_depend>libqt5-core</run_depend>
-    <run_depend>libqt5-widgets</run_depend>
-
-
-    <!-- The export tag contains other, unspecified, tags -->
-    <export>
-        <rviz plugin="${prefix}/plugin_description.xml"/>
-    </export>
+  <export>
+    <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
 </package>
