@@ -1,0 +1,4 @@
+vehicle_info:
+  maximum_steering_angle: 40.0
+  minimum_turning_radius: 3.6
+  wheel_base: 2.14
