@@ -63,7 +63,6 @@ include_directories(
         lib/
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_BINARY_DIR}
-        ${autoware_msgs_INCLUDE_DIRS}
         ${catkin_INCLUDE_DIRS}
         include
 )
@@ -131,6 +130,5 @@ install(FILES
 
 add_dependencies(${PROJECT_NAME}
         ${catkin_EXPORTED_TARGETS}
-        autoware_msgs_generate_messages_cpp
         )
 #endif()
