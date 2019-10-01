@@ -52,7 +52,6 @@ set(CMAKE_CXX_FLAGS "-O2 -g -Wall ${CMAKE_CXX_FLAGS}")
 include_directories(
         include
         ${catkin_INCLUDE_DIRS}
-        ${autoware_msgs_INCLUDE_DIRS}
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_BINARY_DIR}
 )
@@ -63,7 +62,6 @@ add_library(points_image
         )
 add_dependencies(points_image
   ${catkin_EXPORTED_TARGETS}
-  autoware_msgs_generate_messages_cpp
   )
 target_link_libraries(points_image
         ${OpenCV_LIBS}
