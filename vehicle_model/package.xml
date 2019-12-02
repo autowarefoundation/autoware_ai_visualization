@@ -13,6 +13,7 @@
   <exec_depend>gazebo_camera_description</exec_depend>
   <exec_depend>gazebo_imu_description</exec_depend>
   <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>transmission_interface</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
