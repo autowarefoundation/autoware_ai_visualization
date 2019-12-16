@@ -5,8 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
   xacro
 )
 
-catkin_package(
-)
+catkin_package()
 
 include_directories(
   include
@@ -15,5 +14,6 @@ include_directories(
 
 foreach(dir launch mesh urdf)
   install(DIRECTORY ${dir}/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir}
+  )
 endforeach(dir)
