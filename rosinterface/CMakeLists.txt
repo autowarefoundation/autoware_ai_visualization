@@ -5,9 +5,9 @@ include(FindPkgConfig)
 
 find_package(autoware_build_flags REQUIRED)
 find_package(catkin REQUIRED
-        roscpp
-        tf
-        )
+  roscpp
+  tf
+)
 
 set(CMAKE_AUTOMOC ON)
 #set(CMAKE_AUTOUIC ON)
@@ -20,39 +20,38 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 catkin_package(
-        INCLUDE_DIRS include
-        LIBRARIES rosinterface
-        CATKIN_DEPENDS roscpp tf
+  INCLUDE_DIRS include
+  LIBRARIES rosinterface
 )
 
 include_directories(
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${catkin_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${catkin_INCLUDE_DIRS}
 )
 
 qt5_wrap_cpp(rosinterface_SRC
-        include/rosinterface/rosinterface.h
-        )
+  include/rosinterface/rosinterface.h
+)
 
 add_library(rosinterface
-        ROSInterface/rosinterface.cpp
-        ${rosinterface_SRC}
-        )
+  ROSInterface/rosinterface.cpp
+  ${rosinterface_SRC}
+)
 
 target_link_libraries(rosinterface
-        ${catkin_LIBRARIES}
-        Qt5::Core
-        Qt5::Widgets
-        )
+  ${catkin_LIBRARIES}
+  Qt5::Core
+  Qt5::Widgets
+)
 
 install(DIRECTORY include/${PROJECT_NAME}/
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-        FILES_MATCHING PATTERN "*.h"
-        )
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+)
 
 
 install(TARGETS rosinterface
-        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-        )
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

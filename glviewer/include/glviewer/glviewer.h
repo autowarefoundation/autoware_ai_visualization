@@ -37,9 +37,9 @@ struct CAMERAPARAMETERS
     double minView, maxView;
     int width,height;
     Eigen::Vector4d background;
-	GLfloat lightambient[4];
+  GLfloat lightambient[4];
     Eigen::Matrix4d transform;
-	GLfloat eye[4];
+  GLfloat eye[4];
     double tspeed,rspeed;
     int pointsize;
 };
@@ -48,8 +48,8 @@ struct DISPLAYLIST
 {
     bool show;
     GLuint listid;
-	Eigen::Matrix4d transform;
-	Eigen::Matrix4d scale;
+  Eigen::Matrix4d transform;
+  Eigen::Matrix4d scale;
 };
 
 class GLViewer : public QGLWidget
@@ -85,10 +85,10 @@ public:
     void setCameraPose(Eigen::Matrix4d transform);
     Eigen::Matrix4d getCameraPose();
     void setBackground(QColor color);
-	void setDisplayListScale(GLuint listid, double sx, double sy, double sz, bool islistid=1);
-	void setDisplayListRotation(GLuint listid, double rx, double ry, double rz, bool islistid=1);
-	void setDisplayListTranslation(GLuint listid, double tx, double ty, double tz, bool islistid=1);
-	void setDisplayListTransform(GLuint listid, Eigen::Matrix4d transform, bool islistid=1);
+  void setDisplayListScale(GLuint listid, double sx, double sy, double sz, bool islistid=1);
+  void setDisplayListRotation(GLuint listid, double rx, double ry, double rz, bool islistid=1);
+  void setDisplayListTranslation(GLuint listid, double tx, double ty, double tz, bool islistid=1);
+  void setDisplayListTransform(GLuint listid, Eigen::Matrix4d transform, bool islistid=1);
 };
 
 #endif
